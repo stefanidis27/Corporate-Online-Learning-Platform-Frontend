@@ -1,0 +1,53 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <table style="width:90%">
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label">Email:</ion-label>
+          </td>
+          <td>
+            <ion-input class="custom-input" type="text" required name="tbEmail" required [(ngModel)]="strUsrLogin"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label">Password:</ion-label>
+          </td>
+          <td>
+            <ion-input class="custom-input" type="password" required name="tbPwd" required [(ngModel)]="strUsrPwd">
+            </ion-input>
+          </td>
+        </tr>
+      </table>
+      <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+      <br>
+      <br>
+      <br>
+      <ion-button (click)="DoLogin()">
+        <div class="login-button-text">
+          Log In
+        </div>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

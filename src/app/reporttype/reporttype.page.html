@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']">
+          <div class="header-button">Personal Info</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">Manage Courses</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">Edit User Info</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']" [disabled]="true">
+          <div class="header-button">Create Reports</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">About the App</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">Log Out</div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <br><br>
+      <ion-label style="font-weight: bold; color: #241C00; font-size: x-large;">
+        The emailed report will contain a list of one of the following:
+      </ion-label>
+      <br><br><br><br>
+      <ion-button class="custom-report-button" [routerLink]="['/reportcreatetrainee']">
+        <div class="login-button-text">
+          Trainees
+        </div>
+      </ion-button>
+      <br><br><br><br>
+      <ion-button class="custom-report-button" [routerLink]="['/reportcreatertrainer']">
+        <div class="login-button-text">
+          Trainers
+        </div>
+      </ion-button>
+      <br><br><br><br>
+      <ion-button class="custom-report-button" [routerLink]="['/reportcreatercourse']">
+        <div class="login-button-text">
+          Courses
+        </div>
+      </ion-button>
+      <br><br><br><br>
+      <ion-button class="custom-report-button" [routerLink]="['/reportcreaterpath']">
+        <div class="login-button-text">
+          Paths
+        </div>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

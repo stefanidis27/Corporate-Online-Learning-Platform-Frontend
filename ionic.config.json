@@ -1,0 +1,7 @@
+{
+  "name": "mr-team",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

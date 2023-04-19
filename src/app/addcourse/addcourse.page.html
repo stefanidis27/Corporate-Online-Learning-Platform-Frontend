@@ -1,0 +1,231 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">
+            Edit User Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']">
+          <div class="header-button">
+            Create Reports
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <div class="name-panel">
+        <ion-label>Course Creator</ion-label>
+      </div>
+      <div class="search-panel">
+        <table style="width:100%">
+          <tr>
+            <td>
+              <ion-label class="custom-label">Name:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbName" required [(ngModel)]="strNameForm"
+                placeholder="enter a name here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Department:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbDepartment" required [(ngModel)]="strDepartmentForm" placeholder="enter a department here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Position:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbPosition" required [(ngModel)]="strPositionForm" placeholder="enter a position here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Seniority:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbSeniority" required [(ngModel)]="strSeniorityForm" placeholder="enter a seniority here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Email:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbEmail" required [(ngModel)]="strEmailForm" placeholder="enter an email here"></ion-input>
+            </td>
+            <td colspan="2">
+              <ion-button class="custom-search-button" expand="block" (click)="GetAllTrainers()">
+                <div class="custom-label-search">
+                  Search
+                </div>
+              </ion-button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="list-panel">
+        <li class="custom-list-item" *ngFor="let item of items">
+          <ion-row>
+            <ion-col>
+              {{item.name}}
+            </ion-col>
+            <ion-col>
+              {{item.email}}
+            </ion-col>
+            <ion-col>
+              {{item.noTaughtCourses}} cours.
+            </ion-col>
+            <ion-col>
+              {{item.noCurrentTrainees}} current train.
+            </ion-col>
+            <ion-col>
+              <button class="custom-list-button" (click)="FirstButtonClick(item)">Add</button>
+            </ion-col>
+          </ion-row>
+        </li>
+      </div>
+      <br>
+      <ion-label class="custom-label-edit">Selected trainers:</ion-label>
+      <div class="trainer-panel">
+        <li class="custom-list-item" *ngFor="let trainer of trainers">
+          <ion-row>
+            <ion-col>
+              {{trainer.name}}
+            </ion-col>
+            <ion-col>
+              {{trainer.email}}
+            </ion-col>
+            <ion-col>
+              <button class="custom-list-button" (click)="SecondButtonClick(trainer)">Remove</button>
+            </ion-col>
+          </ion-row>
+        </li>
+      </div>
+      <br>
+      <table style="width:80%; text-align: left; margin-left: 10%;">
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Self enrollment:</ion-label>
+          </td>
+          <td>
+            <ion-toggle [checked]="checkedToggle" (ionChange)="changeToggle()"></ion-toggle>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Max nr. of enrollments:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbMaxEnrollmentsEdit" required [(ngModel)]="strMaxEnrollmentsEditForm"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Name:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbNameEdit" required [(ngModel)]="strNameEditForm"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Category:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbCategoryEdit" required [(ngModel)]="strCategoryEditForm"></ion-input>
+          </td>
+        </tr>
+      </table>
+      <br> <br>
+      <ion-button class="login-button-custom" (click)="CreateCourse()">
+        <div class="login-button-text">
+          Create
+        </div>
+      </ion-button>
+      <br> <br> <br>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">
+            Edit User Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']">
+          <div class="header-button">
+            Create Reports
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <div class="name-panel">
+        <ion-label>{{courseName}}</ion-label>
+      </div>
+      <br>
+      <table style="width:80%; text-align: left; margin-left: 10%;">
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Self enrollment:</ion-label>
+          </td>
+          <td>
+            <ion-toggle [checked]="checkedToggle" (ionChange)="changeToggle()"></ion-toggle>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Max nr. of enrollments:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbMaxEnrollmentsEdit" required [(ngModel)]="strMaxEnrollmentsEditForm"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Name:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbNameEdit" required [(ngModel)]="strNameEditForm"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Category:</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbCategoryEdit" required [(ngModel)]="strCategoryEditForm"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label-edit">Description (max 5000):</ion-label>
+          </td>
+          <td>
+            <ion-input type="text" class="custom-input" required name="tbDescriptionEdit" required [(ngModel)]="strDescriptionEditForm"></ion-input>
+          </td>
+        </tr>
+      </table>
+      <br> <br>
+      <ion-button class="login-button-custom" (click)="EditCourse()">
+        <div class="login-button-text">
+          Edit
+        </div>
+      </ion-button>
+      <br> <br> <br>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

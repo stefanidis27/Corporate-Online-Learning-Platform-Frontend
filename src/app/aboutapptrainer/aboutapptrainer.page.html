@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfotrainer']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcoursestrainer']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchpathstrainer']">
+          <div class="header-button">
+            Manage Paths
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapptrainer']" [disabled]="true">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <ion-label>{{strDescription}}</ion-label>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

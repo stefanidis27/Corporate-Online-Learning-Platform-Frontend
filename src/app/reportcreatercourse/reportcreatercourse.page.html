@@ -1,0 +1,301 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">
+            Edit User Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']">
+          <div class="header-button">
+            Create Reports
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <div class="name-panel">
+        <ion-label>Course Report Creator</ion-label>
+      </div>
+      <div class="search-panel">
+        <table style="width:100%; text-align: left;">
+          <tr>
+            <td>
+              <ion-label class="custom-label">Name:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbName" required [(ngModel)]="strNameForm" placeholder="enter a name here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Category:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbCategory" required [(ngModel)]="strCategoryForm" placeholder="enter a category here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Taught by:</ion-label>
+            </td>
+            <td colspan="3" style="text-align: left;">
+              <ion-input type="text" required name="tbTrainers" required [(ngModel)]="strTrainersForm" placeholder="write a list of trainers' emails here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Part of paths:</ion-label>
+            </td>
+            <td colspan="3" style="text-align: left;">
+              <ion-input type="text" required name="tbPaths" required [(ngModel)]="strPathsForm" placeholder="write a list of paths here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest nr. of assign.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestAssign" required [(ngModel)]="strLowestAssignForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest nr. of assign.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestAssign" required [(ngModel)]="strHighestAssignForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest nr. of completions:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestCompletions" required [(ngModel)]="strLowestCompletionsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest nr. of completions:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestCompletions" required [(ngModel)]="strHighestCompletionsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest nr. of unenroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestUnEnrollments" required [(ngModel)]="strLowestUnEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest nr. of unenroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestUnEnrollments" required [(ngModel)]="strHighestUnEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest nr. of curr. enroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestCurrEnrollments" required [(ngModel)]="strLowestCurrEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest nr. of curr. enroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestCurrEnrollments" required [(ngModel)]="strHighestCurrEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest nr. of max. enroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestMaxEnrollments" required [(ngModel)]="strLowestMaxEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest nr. of max. enroll.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestMaxEnrollments" required [(ngModel)]="strHighestMaxEnrollmentsForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest completion rate:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestComplRate" required [(ngModel)]="strLowestComplRateForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest completion rate:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestComplRate" required [(ngModel)]="strHighestComplRateForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest drop-out rate:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestDropRate" required [(ngModel)]="strLowestDropRateForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest drop-out rate:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestDropRate" required [(ngModel)]="strHighestDropRateForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Sort by:</ion-label>
+            </td>
+            <td>
+              <ion-select [(ngModel)]="sortBy" (ionChange)="changeSortBy()" value="currentEnrollments" okText="Ok" cancelText="Cancel">
+                <ion-select-option value="currentEnrollments">popularity</ion-select-option>
+                <ion-select-option value="name">name</ion-select-option>
+                <ion-select-option value="numberOfAssignments">nr. of assign.</ion-select-option>
+                <ion-select-option value="maxEnrollments">max nr. of enroll.</ion-select-option>
+            </ion-select>
+            </td>
+            <td>
+              <ion-label class="custom-label">In order:</ion-label>
+            </td>
+            <td>
+              <ion-select [(ngModel)]="sortMode"(ionChange)="changeSortMode()" value="desc" okText="Ok" cancelText="Cancel">
+                <ion-select-option value="asc">ascending</ion-select-option>
+                <ion-select-option value="desc">descending</ion-select-option>
+              </ion-select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Self enrollment:</ion-label>
+            </td>
+            <td>
+              <ion-select [(ngModel)]="selfEnrollment" (ionChange)="changeSelfEnrollment()" value="any" okText="Ok" cancelText="Cancel">
+                <ion-select-option value="any">any</ion-select-option>
+                <ion-select-option value="false">false</ion-select-option>
+                <ion-select-option value="true">true</ion-select-option>
+              </ion-select>
+            </td>
+            <td colspan="2">
+              <ion-button class="custom-search-button" expand="block" (click)="GetCoursesReport()">
+                <div class="custom-label-search">
+                  Search
+                </div>
+              </ion-button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="list-panel">
+        <li class="custom-list-item" *ngFor="let item of items">
+          <ion-row>
+            <ion-col>
+              {{item.name}}
+            </ion-col>
+            <ion-col>
+              {{item.noAssignments}} assign.
+            </ion-col>
+            <ion-col>
+              {{item.currentEnrollments}}/{{item.maxEnrollments}} enroll.
+            </ion-col>
+            <ion-col>
+              {{item.category}}  
+            </ion-col>
+            <ion-col>
+              {{item.completions}} compl.
+            </ion-col>
+            <ion-col>
+              {{item.completionRate}} compl. rate
+            </ion-col>
+            <ion-col>
+              {{item.unEnrollments}} unenroll.
+            </ion-col>
+            <ion-col>
+              {{item.dropOutRate}} drop-out rate
+            </ion-col>
+            <ion-col>
+              {{item.selfEnrollment}}
+            </ion-col>
+          </ion-row>
+        </li>
+      </div>
+      <br>
+      <ion-button class="login-button-custom" (click)="CreateReport()">
+        <div class="login-button-text">
+          Create Report
+        </div>
+      </ion-button>
+      <br> <br> <br>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

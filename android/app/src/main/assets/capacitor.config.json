@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.mrteam",
+	"appName": "mr-team",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

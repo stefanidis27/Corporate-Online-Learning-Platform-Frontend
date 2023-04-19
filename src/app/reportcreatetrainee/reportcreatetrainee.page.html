@@ -1,0 +1,230 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">
+            Edit User Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']">
+          <div class="header-button">
+            Create Reports
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <div class="name-panel">
+        <ion-label>Trainee Report Creator</ion-label>
+      </div>
+      <div class="search-panel">
+        <table style="width:100%; text-align: left;">
+          <tr>
+            <td>
+              <ion-label class="custom-label">Name:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbName" required [(ngModel)]="strNameForm" placeholder="enter a name here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Department:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbDepartment" required [(ngModel)]="strDepartmentForm" placeholder="enter a department here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Position:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbPosition" required [(ngModel)]="strPositionForm" placeholder="enter a position here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Seniority:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbSeniority" required [(ngModel)]="strSeniorityForm" placeholder="enter a seniority here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Enrolled in course:</ion-label>
+            </td>
+            <td colspan="3" style="text-align: left;">
+              <ion-input type="text" required name="tbEnrolled" required [(ngModel)]="strEnroledForm" placeholder="write the name of a course here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest course progr.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestPr" required [(ngModel)]="strLowestPrForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest course progr.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestPr" required [(ngModel)]="strHighestPrForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Enrolled after 12:00 AM:</ion-label>
+            </td>
+            <td>
+              <ion-datetime presentation="date" [(ngModel)]="selectedAfterDate" placeholder="click to select a date"></ion-datetime>
+            </td>
+            <td>
+              <ion-label class="custom-label">Enrolled before 12:00 AM:</ion-label>
+            </td>
+            <td>
+              <ion-datetime presentation="date" [(ngModel)]="selectedBeforeDate" placeholder="click to select a date"></ion-datetime>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Enrolled in path:</ion-label>
+            </td>
+            <td colspan="3" style="text-align: left;">
+              <ion-input type="text" required name="tbEnrolled" required [(ngModel)]="strEnroledPathForm" placeholder="write the name of a path here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Lowest path progr.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbLowestPrPath" required [(ngModel)]="strLowestPrPathForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+            <td>
+              <ion-label class="custom-label">Highest path progr.:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbHighestPrPath" required [(ngModel)]="strHighestPrPathForm" placeholder="enter a percentage here"></ion-input>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-label class="custom-label">Email:</ion-label>
+            </td>
+            <td>
+              <ion-input type="text" required name="tbEmail" required [(ngModel)]="strEmailForm" placeholder="enter an email here"></ion-input>
+            </td>
+            <td colspan="2">
+              <ion-button class="custom-search-button" expand="block" (click)="GetTraineesReport()">
+                <div class="custom-label-search">
+                  Search
+                </div>
+              </ion-button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="list-panel">
+        <li class="custom-list-item" *ngFor="let item of items">
+          <ion-row>
+            <ion-col>
+              {{item.name}}
+            </ion-col>
+            <ion-col>
+              {{item.email}}    
+            </ion-col>
+            <ion-col>
+              {{item.department}}    
+            </ion-col>
+            <ion-col>
+              {{item.seniority}}    
+            </ion-col>
+            <ion-col>
+              {{item.position}}   
+            </ion-col>
+            <ion-col>
+              {{item.progressLevel}}
+            </ion-col>
+            <ion-col>
+              {{item.enrollmentDate}}
+            </ion-col>
+            <ion-col>
+              {{item.pathProgressLevel}}
+            </ion-col>
+          </ion-row>
+        </li>
+      </div>
+      <br>
+      <ion-button class="login-button-custom" (click)="CreateReport()">
+        <div class="login-button-text">
+          Create Report
+        </div>
+      </ion-button>
+      <br> <br> <br>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfotrainer']">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcoursestrainer']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchpathstrainer']">
+          <div class="header-button">
+            Manage Paths
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapptrainer']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <div class="name-panel">
+        <ion-label>{{courseName}}</ion-label>
+      </div>
+      <ion-row>
+        <button class="custom-course-button" [disabled]="true">{{buttonTraineeNameLabel}}</button>
+        <button class="custom-course-button" (click)="ThirdButtonClick()">Back to enrollments</button>
+      </ion-row>
+      <div class="list-panel">
+        <li class="custom-list-item" *ngFor="let item of items">
+          <table style="width: 100%;">
+            <tr>
+              <td colspan="5">
+                {{item.text}}
+              </td>
+              <td style="background-color: #241C00; text-align: center;">
+                <button class="custom-list-button" (click)="SecondButtonClick(item)">Approve</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">
+                Curr. comment:
+              </td>
+              <td colspan="2" style="font-weight: bold;">
+                {{item.comment}}
+              </td>
+              <td colspan="2">
+                <ion-input type="text" required name="tbComment" required [(ngModel)]="item.newComment" placeholder="Insert a comment here. (max 255)"></ion-input>
+              </td>
+              <td style="background-color: #241C00; text-align: center;">
+                <button class="custom-list-button" (click)="FirstButtonClick(item)">Send</button>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,176 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/personalinfohr']" [disabled]="true">
+          <div class="header-button">
+            Personal Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/searchcourseshr']">
+          <div class="header-button">
+            Manage Courses
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/accountlist']">
+          <div class="header-button">
+            Edit User Info
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/reporttype']">
+          <div class="header-button">
+            Create Reports
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" [routerLink]="['/aboutapphr']">
+          <div class="header-button">
+            About the App
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" (click)="btnLogOutClick()">
+          <div class="header-button">
+            Log out
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="login-panel">
+      <br> <br>
+      <table style="width:90%;">
+        <tr>
+          <td>
+            <ion-label class="custom-label">Position:</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label-info">{{strPosition}}</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label">Name:</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label-info">{{strName}}</ion-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-label class="custom-label">Department:</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label-info">{{strDepartment}}</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label">Seniority:</ion-label>
+          </td>
+          <td>
+            <ion-label class="custom-label-info">{{strSeniority}}</ion-label>
+          </td>
+        </tr>
+      </table>
+      <br> <br> <br> <br>
+      <ion-label class="custom-label">Change your settings by writing below:</ion-label>
+      <br> <br> <br> <br>
+      <table style="width:70%; margin-left: 17.5%;">
+        <tr>
+          <td style="text-align: left;">
+            <ion-label class="custom-label">New email:</ion-label>
+          </td>
+          <td>
+            <ion-input class="custom-input" type="text" required name="tbPwd" required [(ngModel)]="strUsrLogin"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">
+            <ion-label class="custom-label">New password:</ion-label>
+          </td>
+          <td>
+            <ion-input class="custom-input" type="password" required name="tbPwd" required [(ngModel)]="strUsrPwd"></ion-input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">
+            <ion-label class="custom-label">Confirm new password:</ion-label>
+          </td>
+          <td>
+            <ion-input class="custom-input" type="password" required name="tbPwdConf" required [(ngModel)]="strUsrPwdConf"></ion-input>
+          </td>
+        </tr>
+      </table>
+      <br> <br> <br> <br>
+      <ion-button class="login-button-custom" (click)="ChangeUserInfo()">
+        <div class="login-button-text">
+          Save
+        </div>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.udemy.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/udemy.png" alt="udemy"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.coursera.org/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/coursera.png" alt="coursera"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.linkedin.com/learning/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/linkedin.png" alt="linkedin"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.skillshare.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/skill.png" alt="skill"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://www.edx.org/school/harvardx', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/harvardx.png" alt="harvardx"></button>
+      </ion-col>
+      <ion-col>
+        <button style="background-color: #857643;" onclick="window.open('https://leetcode.com/', '_blank');"><img style="height: 35px; width: 100px;" src="../../assets/img/leetcode.png" alt="leetcode"></button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
