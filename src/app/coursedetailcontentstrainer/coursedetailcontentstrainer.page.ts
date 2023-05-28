@@ -25,6 +25,7 @@ export class CoursedetailcontentstrainerPage {
   }
 
   GetCourseContentsToTrainer() {
+    this.items = [];
     const headers = { 'Authorization': 'Bearer ' + this.srvMain.Token };
 
     this.http.get<any>(

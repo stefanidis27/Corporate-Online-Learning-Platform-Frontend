@@ -50,6 +50,7 @@ export class CoursedetailinfoPage {
   }
 
   GetTraineeCourseInfo() {
+    this.strTrainers = "";
     const headers = { 'Authorization': 'Bearer ' + this.srvMain.Token };
 
     this.http.get<any>(
