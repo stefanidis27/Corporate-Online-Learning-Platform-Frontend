@@ -14,6 +14,7 @@ export class SrvMainService {
   public NameTraineeToReview: string;
   public selectedCourseName: string;
   public teacherName: string;
+  public editSelfEnrollCheckbox: boolean;
 
   public strWSPath: string = "http://localhost:8080/api/v1/";
 

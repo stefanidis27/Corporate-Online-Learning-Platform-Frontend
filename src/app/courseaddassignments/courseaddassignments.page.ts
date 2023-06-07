@@ -88,7 +88,7 @@ export class CourseaddassignmentsPage {
     ).subscribe();
 
     setTimeout(() => {
-      this.router.navigate(['/coursedetailcontentstrainer']);
+      this.router.navigate(['/searchcoursestrainer']);
     }, 300);
   }
 

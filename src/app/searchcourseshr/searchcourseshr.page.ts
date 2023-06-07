@@ -87,6 +87,7 @@ export class SearchcourseshrPage {
   SecondButtonClick(item: any) {
     this.srvMain.IdCourse = item.id;
     this.srvMain.selectedCourseName = item.name;
+    this.srvMain.editSelfEnrollCheckbox = item.firstButtonDisabled;
 
     setTimeout(() => {
       this.router.navigate(['/editcourse']);

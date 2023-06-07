@@ -23,6 +23,7 @@ export class EditcoursePage {
     private srvMain: SrvMainService,
     private router: Router,
     private alertController: AlertController) {
+    this.checkedToggle = this.srvMain.editSelfEnrollCheckbox;
   }
 
   ionViewWillEnter() {
@@ -30,7 +31,6 @@ export class EditcoursePage {
     this.strCategoryEditForm = "";
     this.strMaxEnrollmentsEditForm = "";
     this.strDescriptionEditForm = "";
-    this.checkedToggle = false;
     this.courseName = this.srvMain.selectedCourseName;
   }
 
@@ -41,11 +41,6 @@ export class EditcoursePage {
   EditCourse() {
     if (this.strNameEditForm.trim() === this.courseName) {
       this.presentAlert("Please choose a different name as a new name for this course.");
-    } else if (this.strNameEditForm.trim().length == 0
-      && this.strCategoryEditForm.trim().length == 0
-      && this.strMaxEnrollmentsEditForm.trim().length == 0
-      && this.strDescriptionEditForm.trim().length == 0) {
-      this.presentAlertSelfEnroll();
     } else if (this.strMaxEnrollmentsEditForm.trim().length != 0
       && Number(this.strMaxEnrollmentsEditForm.trim()) <= 0) {
       this.presentAlert("Please enter a value greater than 0 for the number of maximum enrollments.");
@@ -92,29 +87,6 @@ export class EditcoursePage {
       header: 'Error',
       message: msg,
       buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-
-  async presentAlertSelfEnroll() {
-    const alert = await this.alertController.create({
-      header: 'Warning',
-      message: 'The self enrollment option of the selected course will be changed. Do you wish to proceed?',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {},
-        },
-        {
-          text: 'OK',
-          role: 'confirm',
-          handler: () => {
-            this.sendEditCourse();
-          },
-        },
-      ],
     });
 
     await alert.present();

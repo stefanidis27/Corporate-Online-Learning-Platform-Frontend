@@ -73,7 +73,7 @@ export class AddcoursePage {
       this.queryParam += "&name=" + this.strNameForm.trim();
     }
     if (this.strDepartmentForm.trim().length != 0) {
-      this.queryParam += "&category=" + this.strDepartmentForm.trim();
+      this.queryParam += "&department=" + this.strDepartmentForm.trim();
     }
     if (this.strSeniorityForm.trim().length != 0) {
       this.queryParam += "&seniority=" + this.strSeniorityForm.trim();

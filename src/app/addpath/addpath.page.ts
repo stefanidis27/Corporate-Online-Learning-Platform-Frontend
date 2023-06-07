@@ -132,7 +132,7 @@ export class AddpathPage {
           }
         });
     } else {
-      this.presentAlarm("Please choose a name, a password and at least one course for the new path.");
+      this.presentAlarm("Please choose a name, a category and at least one course for the new path.");
     }
   }
 

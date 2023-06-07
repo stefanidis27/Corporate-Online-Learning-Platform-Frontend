@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 import { SrvMainService } from '../srv-main.service';
 import { Router } from '@angular/router';
 
@@ -16,7 +17,8 @@ export class CoursedetailcontentsPage {
   constructor(
     private http: HttpClient,
     private srvMain: SrvMainService,
-    private router: Router) {
+    private router: Router,
+    private alertController: AlertController) {
   }
 
   ionViewWillEnter() {
@@ -63,8 +65,20 @@ export class CoursedetailcontentsPage {
             id: data[i].id
           });
         }
+      } else {
+        this.presentAlarm("You need to be enrolled in this course in order to see its contents.");
       }
     });
+  }
+
+  async presentAlarm(msg: string) {
+    const alert = await this.alertController.create({
+      header: 'Warning',
+      message: msg,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   FirstButtonClick(item: any) {
