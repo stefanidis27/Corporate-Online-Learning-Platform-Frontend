@@ -52,6 +52,7 @@ export class CoursedetailinfotrainerPage {
     this.strDescription = data.description;
     this.currEnroll = data.currentEnrollments;
     this.maxEnroll = data.maxEnrollments;
+    this.srvMain.selectedCourseName = data.name;
 
     for (let i = 0; i < data.trainers.length; i++) {
       if (i != data.trainers.length - 1) {
