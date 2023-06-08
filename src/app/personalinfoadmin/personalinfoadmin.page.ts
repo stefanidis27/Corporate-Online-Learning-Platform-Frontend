@@ -43,9 +43,12 @@ export class PersonalinfoadminPage {
       {headers}
       ).subscribe(data => {
         this.strName = data.name;
-        this.strDepartment = data.department;
-        this.strPosition = data.position;
-        this.strSeniority = data.seniority;
+        this.strDepartment = data.department.length == 0
+          ? "--" : data.department;
+        this.strPosition = data.position.length == 0
+          ? "--" : data.position;
+        this.strSeniority = data.seniority.length == 0
+          ? "--" : data.seniority;
       })
   }
 
@@ -132,6 +135,9 @@ export class PersonalinfoadminPage {
       { headers }
     ).subscribe(data => {
       this.srvMain.Token = data.token;
+      this.strUsrLogin = "";
+      this.strUsrPwd = null;
+      this.strUsrPwdConf = null;
     },
     error => {
       if (error.status === 400) {

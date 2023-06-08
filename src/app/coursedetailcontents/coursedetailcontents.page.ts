@@ -43,7 +43,7 @@ export class CoursedetailcontentsPage {
 
           if ((data[i].needsGrading == true && data[i].status == true)
             || (data[i].needsGrading == false && data[i].status == true)) {
-              status = "Completed assignment";
+              status = "Assignment completed";
               firstButtonDisabled = true;
           } else if (data[i].needsGrading == false && data[i].status == false) {
             status = "";

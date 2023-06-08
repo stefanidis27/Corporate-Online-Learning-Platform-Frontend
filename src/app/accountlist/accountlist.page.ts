@@ -89,7 +89,7 @@ export class AccountlistPage {
   }
 
   FirstButtonClick(item : any) {
-    if (this.strNameForm.trim().length == 0
+    if (this.strNameEditForm.trim().length == 0
       && this.strDepartmentEditForm.trim().length == 0
       && this.strPositionEditForm.trim().length == 0
       && this.strSeniorityEditForm.trim().length == 0) {

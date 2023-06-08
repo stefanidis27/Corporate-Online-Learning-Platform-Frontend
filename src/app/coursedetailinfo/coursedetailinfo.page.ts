@@ -66,18 +66,22 @@ export class CoursedetailinfoPage {
 
         if (data.enrollmentAction === "COURSE_COMPLETED") {
           this.strStatus = "Not enrolled";
+          this.strDate = "";
           this.buttonDisabled = true;
           this.strEnrollButton = "You have completed this course"
         } else if (data.enrollmentAction === "SELF_ENROLLMENT_NOT_ALLOWED") {
           this.getStatus(data);
+          this.strDate = "";
           this.buttonDisabled = true;
           this.strEnrollButton = "Can't self enroll"
         } else if (data.enrollmentAction === "MAX_ENROLLMENTS_REACHED") {
           this.getStatus(data);
+          this.strDate = "";
           this.buttonDisabled = true;
           this.strEnrollButton = "Max number of enrollments reached"
         } else if (data.enrollmentAction === "ENROLLMENT_ALLOWED") {
           this.getStatus(data);
+          this.strDate = "";
           this.buttonDisabled = null;
           this.strEnrollButton = "Enroll"
         } else {
