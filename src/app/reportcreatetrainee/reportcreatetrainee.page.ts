@@ -77,9 +77,12 @@ export class ReportcreatetraineePage {
         this.items.push({
           name: data[i].name,
           email: data[i].email,
-          department: data[i].department == null ? "-" : data[i].department,
-          seniority: data[i].seniority == null ? "-" : data[i].seniority,
-          position: data[i].position == null ? "-" : data[i].position,
+          department: (data[i].department == null
+            || data[i].department.length == 0) ? "-" : data[i].department,
+          position: (data[i].position == null
+            || data[i].position.length == 0) ? "-" : data[i].position,
+          seniority: (data[i].seniority == null
+            || data[i].seniority.length == 0) ? "-" : data[i].seniority,
           progressLevel: progressLevel,
           enrollmentDate: data[i].enrollmentDate,
           pathProgressLevel: pathProgressLevel
