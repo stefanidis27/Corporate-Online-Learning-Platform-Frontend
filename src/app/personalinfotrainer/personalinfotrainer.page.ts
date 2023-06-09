@@ -43,6 +43,7 @@ export class PersonalinfotrainerPage {
       {headers}
       ).subscribe(data => {
         this.strName = data.name;
+        this.srvMain.teacherName = data.name;
         this.strDepartment = data.department.length == 0
           ? "--" : data.department;
         this.strPosition = data.position.length == 0
